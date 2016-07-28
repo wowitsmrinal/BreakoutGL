@@ -1,0 +1,20 @@
+[submodule "BreakoutGL/Vendor/assimp"]
+    path = BreakoutGL/Vendor/assimp
+    url = https://github.com/assimp/assimp.git
+    branch = master
+[submodule "BreakoutGL/Vendor/glad"]
+    path = BreakoutGL/Vendor/glad
+    url = https://github.com/Dav1dde/glad.git
+    branch = c
+[submodule "BreakoutGL/Vendor/glfw"]
+    path = BreakoutGL/Vendor/glfw
+    url = https://github.com/glfw/glfw.git
+    branch = master
+[submodule "BreakoutGL/Vendor/glm"]
+    path = BreakoutGL/Vendor/glm
+    url = https://github.com/g-truc/glm.git
+    branch = master
+[submodule "BreakoutGL/Vendor/stb"]
+    path = BreakoutGL/Vendor/stb
+    url = https://github.com/nothings/stb.git
+    branch = master
