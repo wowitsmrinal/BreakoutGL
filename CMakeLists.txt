@@ -11,6 +11,13 @@ option(ASSIMP_BUILD_SAMPLES OFF)
 option(ASSIMP_BUILD_TESTS OFF)
 add_subdirectory(BreakoutGL/Vendor/assimp)
 
+option(BUILD_BULLET2_DEMOS OFF)
+option(BUILD_CPU_DEMOS OFF)
+option(BUILD_EXTRAS OFF)
+option(BUILD_OPENGL3_DEMOS OFF)
+option(BUILD_UNIT_TESTS OFF)
+add_subdirectory(BreakoutGL/Vendor/bullet)
+
 if(MSVC)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
 else()
@@ -22,6 +29,7 @@ endif()
 
 include_directories(BreakoutGL/Headers/
                     BreakoutGL/Vendor/assimp/include/
+                    BreakoutGL/Vendor/bullet/src
                     BreakoutGL/Vendor/glad/include/
                     BreakoutGL/Vendor/glfw/include/
                     BreakoutGL/Vendor/glm/
@@ -30,7 +38,6 @@ include_directories(BreakoutGL/Headers/
 file(GLOB VENDORS_SOURCES BreakoutGL/Vendor/glad/src/glad.c)
 file(GLOB PROJECT_HEADERS BreakoutGL/Headers/*.hpp)
 file(GLOB PROJECT_SOURCES BreakoutGL/Sources/*.cpp)
-file(GLOB PROJECT_LEVELS  BreakoutGL/Levels/*.lvl)
 file(GLOB PROJECT_SHADERS BreakoutGL/Shaders/*.*)
 file(GLOB PROJECT_CONFIGS CMakeLists.txt
                           Readme.md
@@ -41,7 +48,6 @@ file(GLOB PROJECT_CONFIGS CMakeLists.txt
 source_group("Headers" FILES ${PROJECT_HEADERS})
 source_group("Shaders" FILES ${PROJECT_SHADERS})
 source_group("Sources" FILES ${PROJECT_SOURCES})
-source_group("Levels"  FILES ${PROJECT_LEVELS})
 source_group("Vendors" FILES ${VENDORS_SOURCES})
 
 add_definitions(-DGLFW_INCLUDE_NONE
@@ -50,6 +56,7 @@ add_executable(${PROJECT_NAME} ${PROJECT_SOURCES} ${PROJECT_HEADERS}
                                ${PROJECT_SHADERS} ${PROJECT_CONFIGS}
                                ${VENDORS_SOURCES})
 target_link_libraries(${PROJECT_NAME} assimp glfw
-                      ${GLFW_LIBRARIES} ${GLAD_LIBRARIES})
+                      ${GLFW_LIBRARIES} ${GLAD_LIBRARIES}
+                      BulletDynamics BulletCollision LinearMath)
 set_target_properties(${PROJECT_NAME} PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PROJECT_NAME})

@@ -1,7 +1,5 @@
 #include "texture.hpp"
 
-#include <iostream>
-
 Texture2D::Texture2D()
 : width(0), height(0), internalFormat(GL_RGB), imageFormat(GL_RGB), wrap_s(GL_REPEAT), wrap_t(GL_REPEAT), filter_min(GL_LINEAR), filter_max(GL_LINEAR)
 {
