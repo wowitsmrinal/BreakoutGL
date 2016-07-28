@@ -15,9 +15,9 @@ PostProcessor       *Effects;
 GLfloat             ShakeTime = 0.0f;
 
 // Game Asset Paths
-std::string shaderDir   = PROJECT_SOURCE_DIR "/Glitter/Shaders/";
-std::string textureDir  = PROJECT_SOURCE_DIR "/Glitter/Textures/";
-std::string levelDir    = PROJECT_SOURCE_DIR "/Glitter/Levels/";
+std::string shaderDir   = PROJECT_SOURCE_DIR "/BreakoutGL/Shaders/";
+std::string textureDir  = PROJECT_SOURCE_DIR "/BreakoutGL/Textures/";
+std::string levelDir    = PROJECT_SOURCE_DIR "/BreakoutGL/Levels/";
 
 GameLevel levelLoadHelper(std::string levelName, Game *game) {
     GameLevel level;

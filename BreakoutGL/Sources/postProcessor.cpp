@@ -60,7 +60,6 @@ void PostProcessor::beginRender() {
     glBindFramebuffer(GL_FRAMEBUFFER, this->MSFBO);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
-    std::cout << width << " " << height << std::endl;
 }
 
 void PostProcessor::endRender() {
