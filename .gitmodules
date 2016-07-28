@@ -13,3 +13,6 @@
 [submodule "BreakoutGL/Vendor/stb"]
 	path = BreakoutGL/Vendor/stb
 	url = https://github.com/nothings/stb.git
+[submodule "BreakoutGL/Vendor/bullet"]
+	path = BreakoutGL/Vendor/bullet
+	url = https://github.com/bulletphysics/bullet3.git
